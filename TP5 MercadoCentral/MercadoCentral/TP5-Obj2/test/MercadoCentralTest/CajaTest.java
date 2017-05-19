@@ -6,10 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tp5_obj2_MercadoCentral.Caja;
-import tp5_obj2_MercadoCentral.Chocolate;
-import tp5_obj2_MercadoCentral.Manzana;
-import tp5_obj2_MercadoCentral.Pera;
 import tp5_obj2_MercadoCentral.Producto;
+import tp5_obj2_MercadoCentral.ProductoDeCooperativa;
+import tp5_obj2_MercadoCentral.ProductoDeEmpresa;
 
 public class CajaTest {
 
@@ -20,9 +19,9 @@ public class CajaTest {
 	public void setUp() throws Exception {
 		
 		//Productos
-		Producto prod1 = new Manzana(25,"Manzana");
-		Producto prod2 = new Pera(25,"Pera");
-		Producto prod3 = new Chocolate(100,"Choco");
+		Producto prod1 = new ProductoDeEmpresa(25, "Manzana",100);
+		Producto prod2 = new ProductoDeEmpresa(25, "Pera",100);
+		Producto prod3 = new ProductoDeCooperativa(100, "Choco",25);
 		
 		//Caja vacia
 		cajaDePruebaVacia = new Caja();
@@ -47,7 +46,7 @@ public class CajaTest {
 	public void test002_UnaCajaTieneTresProductosYSuMontoTotalEsDe150Pesos() {
 		
 		int cantProds = 3;
-		int montoEsperado = 150;
+		int montoEsperado = 172;
 		
 		assertEquals(cantProds, cajaDePruebaCon3Productos.getCantProds());
 		assertEquals(montoEsperado, cajaDePruebaCon3Productos.getMontoTotal());

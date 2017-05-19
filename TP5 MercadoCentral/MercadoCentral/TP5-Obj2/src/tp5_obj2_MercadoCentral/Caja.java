@@ -16,10 +16,10 @@ public class Caja {
 		this.montoTotal = montoTotal + nuevoMonto;
 	}
 	
-	public void registrarProd(Producto prod, Proveedor prov) {
-		this.updateMonto((prov.getProd(prod).getCosto()));
+	public void registrarProd(Producto prod) {
+		this.updateMonto((prod.getCosto()));
 		this.addProd(prod);
-		prov.reduceStock();		//reduce el stock al proveedor
+		prod.reduceStock();
 	}
 
 	private void addProd(Producto prod) {
