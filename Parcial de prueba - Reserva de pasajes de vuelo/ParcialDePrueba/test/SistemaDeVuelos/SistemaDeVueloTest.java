@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import static org.mockito.Mockito.*;
 
+import java.sql.Date;
 import java.util.Arrays;
 import java.util.List;
 
@@ -68,11 +69,11 @@ public class SistemaDeVueloTest {
 		sistemaDeVuelos.reservar(dummyCliente, dummyVuelo);
 		sistemaDeVuelos.reservar(dummyCliente2, dummyVuelo2);
 		
-		int nuevoHorario = 1604; 
+		Date nuevoHorario = mock(Date.class); 
 		
 		sistemaDeVuelos.modificarHorario(dummyVuelo, nuevoHorario);
 		
-		verify(dummyVuelo).setHorario(nuevoHorario);
+		verify(dummyVuelo).setFechaHoraS(nuevoHorario);
 	}
 
 }
