@@ -9,7 +9,7 @@ public class Usuario implements Observer {
 	
 	private String nombre;
 	private Map<Subasta, Integer> publicacionesHechas;
-	//Tiene la publicacion y su desempeño calculado en base a la
+	//Tiene la publicacion y su desempeï¿½o calculado en base a la
 	//	cantidad de ofertantes que hicieron ofertas.
 	private Map<Subasta, Integer> ofertasHechas;
 	private Map<Subasta, Usuario> ofertasSuperadas;
@@ -41,11 +41,11 @@ public class Usuario implements Observer {
 		subastasFinalizadas.add(sub);
 	}
 
-	public void añadirPublicacionHecha(Subasta subasta) {
+	public void aniadirPublicacionHecha(Subasta subasta) {
 		publicacionesHechas.put(subasta, subasta.countObservers());
 	}
 
-	public void añadirOferta(Subasta sub, int monto) {
+	public void aniadirOferta(Subasta sub, int monto) {
 		ofertasHechas.put(sub, monto);
 	}
 	

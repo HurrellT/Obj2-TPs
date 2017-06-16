@@ -1,5 +1,6 @@
 package ParcialSubastas;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -10,7 +11,9 @@ public class SistemaDeComercio {
 	private List<SistemaExternoDeSubastas> sistemasRegistrados;
 	
 	public SistemaDeComercio() {
-		
+		usuarios = new ArrayList<Usuario>();
+		publicaciones = new ArrayList<Subasta>();
+		sistemasRegistrados = new ArrayList<SistemaExternoDeSubastas>();
 	}
 	
 	public void registrarUsuario(Usuario user) {
@@ -21,7 +24,7 @@ public class SistemaDeComercio {
 		Subasta subasta = new Subasta(prod, precioMin, precioRef, autor);
 		
 		this.publicaciones.add(subasta);
-		autor.añadirPublicacionHecha(subasta);
+		autor.aniadirPublicacionHecha(subasta);
 	}
 	
 	public void ofertar(Usuario user, Subasta sub, int monto) {
@@ -44,7 +47,7 @@ public class SistemaDeComercio {
 		}
 		else {
 			if(monto>sub.getPrecioActual()) {
-				user.añadirOferta(sub,monto);
+				user.aniadirOferta(sub,monto);
 				sub.ofertar(monto, user);
 				sub.setMejorPostor(user);
 				sub.addObserver(user);
